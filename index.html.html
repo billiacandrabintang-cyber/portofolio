@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bintang Billia Candra — Public Policy Analyst &amp; Governance Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for editorial authority -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#080D1A',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                        },
+                        gold: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Subtle fade-in animation for scroll reveals */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar for modals */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Print / Resume View Styles */
+        @media print {
+            nav, .no-print, #caseModal, #toast {
+                display: none !important;
+            }
+            body {
+                background: #ffffff !important;
+                color: #0F172A !important;
+                font-size: 11pt;
+            }
+            section {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+                break-inside: avoid;
+            }
+            .fade-in-section {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: #0F172A !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-navy-900">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-shadow" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Monogram -->
+                <a href="#about" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center font-serif font-bold text-lg tracking-tight group-hover:bg-amber-600 transition-colors">
+                        BC
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="block text-sm font-bold text-navy-900 leading-tight">Bintang Billia Candra</span>
+                        <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Public Policy &amp; Governance</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-navy-900 transition-colors">About</a>
+                    <a href="#pillars" class="hover:text-navy-900 transition-colors">Core Pillars</a>
+                    <a href="#case-studies" class="hover:text-navy-900 transition-colors">Case Studies</a>
+                    <a href="#workflow" class="hover:text-navy-900 transition-colors">Policy Workflow</a>
+                    <a href="#credentials" class="hover:text-navy-900 transition-colors">Credentials</a>
+                    <a href="#contact" class="hover:text-navy-900 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Button & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-navy-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-lg transition-colors" title="Print or Save as PDF Resume">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        Print Resume View
+                    </button>
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">About</a>
+            <a href="#pillars" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Core Pillars</a>
+            <a href="#case-studies" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Case Studies</a>
+            <a href="#workflow" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Policy Workflow</a>
+            <a href="#credentials" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Credentials</a>
+            <a href="#contact" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Contact</a>
+            <button onclick="window.print()" class="w-full mt-2 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-semibold text-navy-900 bg-slate-100 rounded-lg">
+                Print / Save Resume View
+            </button>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="about" class="relative bg-navy-900 text-white overflow-hidden">
+        <!-- Subtle architectural grid background -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-24">
+            <div class="max-w-4xl">
+                <!-- Location & Availability Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-amber-300 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    Jakarta, Indonesia &bull; Public Policy, Government Relations &amp; Corporate Legal Support
+                </div>
+
+                <!-- Name & Editorial Headline -->
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+                    Bintang Billia Candra
+                </h1>
+                <p class="text-lg sm:text-xl font-medium text-amber-400 mb-6">
+                    Public Policy Analyst <span class="text-slate-500 mx-1">|</span> Regulatory &amp; Governance <span class="text-slate-500 mx-1">|</span> Government Relations
+                </p>
+
+                <!-- Executive Summary -->
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mb-8">
+                    Applied Bachelor in Demography and Civil Registration (<strong class="text-white font-semibold">GPA 3.76/4.00, Universitas Sebelas Maret</strong>) and <strong class="text-white font-semibold">BNSP-Certified Public Policy Analyst</strong> with hands-on experience across a national ministry (<strong class="text-white font-semibold">KemenPANRB</strong>), a city legislative council (<strong class="text-white font-semibold">DPRD Kota Yogyakarta</strong>), local civil registration offices (<strong class="text-white font-semibold">Disdukcapil</strong>), and corporate operations. Bridging regulatory precision, field research, and multi-stakeholder coordination.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-3.5 no-print">
+                    <a href="#case-studies" class="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold rounded-lg shadow-lg shadow-amber-900/20 transition-all">
+                        Explore Case Studies
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/bintangbillia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold rounded-lg transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn Profile
+                    </a>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 text-slate-300 hover:text-white text-sm font-medium transition-colors">
+                        Direct Contact &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Stats Bar -->
+            <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-serif">3.76<span class="text-base font-sans font-normal text-slate-400">/4.00</span></div>
+                    <div class="text-xs font-medium text-amber-400 uppercase tracking-wider mt-1">GPA &bull; UNS Surakarta</div>
+                    <div class="text-xs text-slate-400 mt-0.5">D4 Demography &amp; Civil Reg.</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-serif">BNSP</div>
+                    <div class="text-xs font-medium text-amber-400 uppercase tracking-wider mt-1">Certified Policy Analyst</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Analis Kebijakan Publik (2025)</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-serif">4,000+</div>
+                    <div class="text-xs font-medium text-amber-400 uppercase tracking-wider mt-1">Event Attendees</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Cross-functional coordination</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-serif">2,000+</div>
+                    <div class="text-xs font-medium text-amber-400 uppercase tracking-wider mt-1">Citizens Reached</div>
+                    <div class="text-xs text-slate-400 mt-0.5">Digital ID &amp; 2,033 KIA Cards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. FOUR CORE COMPETENCY PILLARS -->
+    <section id="pillars" class="py-20 bg-white border-b border-slate-200/70 fade-in-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Core Competencies</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Four Pillars of Practice</h2>
+                <p class="text-slate-600 mt-3 text-base">
+                    Combining national regulatory architecture, local legislative processes, empirical population data, and commercial contract execution.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Pillar 1 -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-amber-500/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/60">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center font-serif font-bold text-lg">01</div>
+                        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider bg-navy-900/5 text-navy-800 rounded-md">KemenPANRB</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-amber-700 transition-colors">National Public Policy &amp; Governance</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Drafting policy briefs on integrating public service innovations across government agencies.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Harmonizing <strong>RPerMen Inovasi Pelayanan Publik</strong> through structured issue tracking and change matrices.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Developing <strong>GNPP</strong> (Gerakan Nasional Pelayanan Publik) action plan matrices and implementation Gantt charts.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Direct exposure to <strong>KIPP PRO Tematik 2026</strong> evaluation frameworks and <strong>JIPPNAS</strong> platform restructuring.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-amber-500/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/60">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center font-serif font-bold text-lg">02</div>
+                        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider bg-navy-900/5 text-navy-800 rounded-md">DPRD Kota Yogyakarta</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-amber-700 transition-colors">Legislative &amp; Regulatory Exposure</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Supported committee and plenary sessions on regional draft regulations (<strong>Raperda</strong>), including regional budget amendments.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Tracked legislative review on the repeal of <strong>Regional Regulation No. 4/2001 (SIUJK)</strong> and legal-entity restructuring of <strong>Perumda BPR Bank Jogja</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Followed academic papers (<em>naskah akademik</em>) covering elderly welfare, wastewater management, and food safety/halal food.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Participated in <strong>OSS (Online Single Submission)</strong> licensing and anti-human trafficking law public outreach.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-amber-500/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/60">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center font-serif font-bold text-lg">03</div>
+                        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider bg-navy-900/5 text-navy-800 rounded-md">Disdukcapil &amp; Field</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-amber-700 transition-colors">Field Research &amp; Population Data</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Designed surveys, questionnaires, and interview guides; conducted <strong>SPSS statistical analysis</strong> on pandemic impacts among Surakarta market vendors.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Executed qualitative policy interviews with Malioboro street vendors on urban relocation and regulatory compliance.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Managed <strong>SIAK database</strong> records and civil-status document verification at <strong>Disdukcapil Kabupaten Bantul</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Led Digital ID (IKD) &amp; KIA socialization reaching <strong>2,000+ citizens</strong> and distributing <strong>2,033 KIA cards</strong> (Disdukcapil Semarang).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-amber-500/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/60">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center font-serif font-bold text-lg">04</div>
+                        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider bg-navy-900/5 text-navy-800 rounded-md">Corporate &amp; B2B</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-amber-700 transition-colors">Corporate, Contracts &amp; Licensing</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Drafted and reviewed sponsorship agreements and vendor contracts, ensuring deliverable alignment and risk mitigation.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Pitched B2B sponsorships to major beverage brands and managed cross-functional teams for <strong>4,000+ attendee events</strong> (PT Jogja Ciamik Soro).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Consistently exceeded monthly sales and upselling targets in telemarketing operations at <strong>PT Anarya</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                            <span>Provided informal business licensing and land/building use permit navigation support for local operators.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTERACTIVE CASE STUDIES & FEATURED WORK -->
+    <section id="case-studies" class="py-20 bg-slate-50 border-b border-slate-200/70 fade-in-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Selected Portfolio</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Case Studies &amp; Featured Work</h2>
+                    <p class="text-slate-600 mt-2 text-base">Filter by career track or click any engagement to inspect deliverables, methodology, and outcomes.</p>
+                </div>
+
+                <!-- Interactive Filter Buttons -->
+                <div class="flex flex-wrap gap-2 no-print" id="filterButtons">
+                    <button data-filter="all" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-navy-900 text-white shadow-sm">All Tracks</button>
+                    <button data-filter="policy" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-navy-900">Policy &amp; Governance</button>
+                    <button data-filter="legislative" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-navy-900">Legislative &amp; Legal</button>
+                    <button data-filter="research" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-navy-900">Research &amp; Data</button>
+                    <button data-filter="corporate" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-navy-900">Corporate &amp; Operations</button>
+                </div>
+            </div>
+
+            <!-- Case Study Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="caseGrid">
+                <!-- Populated dynamically via JS for clean modal binding -->
+            </div>
+
+            <!-- Featured Interactive Artifact: Regulatory Harmonization Matrix -->
+            <div class="mt-12 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-navy-900 px-6 py-5 sm:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 rounded">Analytical Sample</span>
+                            <span class="text-xs text-slate-400">Case Study 01 Artifact</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mt-1">Regulatory Harmonization Matrix — RPerMen Inovasi Pelayanan Publik</h3>
+                    </div>
+                    <button onclick="openCaseModal('case-1')" class="no-print shrink-0 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-lg border border-white/15 transition-colors">
+                        View Full Case Study
+                    </button>
+                </div>
+
+                <!-- Interactive Dimension Tabs / Table -->
+                <div class="p-6 sm:p-8">
+                    <p class="text-sm text-slate-600 mb-5">
+                        A structured four-dimension review framework applied during regulatory drafting to eliminate normative ambiguity and maintain auditability across multi-stakeholder revisions:
+                    </p>
+
+                    <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-navy-900">
+                                    <th class="py-3.5 px-4 w-1/4">Analytical Dimension</th>
+                                    <th class="py-3.5 px-4 w-1/3">Review Focus &amp; Criteria</th>
+                                    <th class="py-3.5 px-4">Illustrative Output / Action Taken</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                                <tr class="hover:bg-amber-50/40 transition-colors">
+                                    <td class="py-4 px-4 font-semibold text-navy-900">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-amber-600 mr-2"></span>
+                                        1. Terminology Consistency
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-600">Cross-checking definitions in General Provisions (<em>Ketentuan Umum</em>) against operational articles and higher-level laws.</td>
+                                    <td class="py-4 px-4">Standardized recurring institutional terms and innovation classifications to prevent conflicting interpretations across ministries.</td>
+                                </tr>
+                                <tr class="hover:bg-amber-50/40 transition-colors">
+                                    <td class="py-4 px-4 font-semibold text-navy-900">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-amber-600 mr-2"></span>
+                                        2. Norm Clarity
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-600">Evaluating whether mandates, authorities, and procedural timelines are actionable without excessive administrative discretion.</td>
+                                    <td class="py-4 px-4">Flagged vague obligations and proposed concise, enforceable phrasing aligned with Indonesian legislative drafting standards (UU 12/2011).</td>
+                                </tr>
+                                <tr class="hover:bg-amber-50/40 transition-colors">
+                                    <td class="py-4 px-4 font-semibold text-navy-900">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-amber-600 mr-2"></span>
+                                        3. Change Traceability
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-600">Maintaining side-by-side version control (<em>Matriks Sandingan</em>) between legacy provisions, draft revisions, and stakeholder inputs.</td>
+                                    <td class="py-4 px-4">Logged article-by-article rationales for every addition, deletion, or restructuring to support leadership briefings.</td>
+                                </tr>
+                                <tr class="hover:bg-amber-50/40 transition-colors">
+                                    <td class="py-4 px-4 font-semibold text-navy-900">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-amber-600 mr-2"></span>
+                                        4. Open Issues
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-600">Isolating unresolved cross-unit policy debates, legal-authority boundaries, or technical implementation bottlenecks.</td>
+                                    <td class="py-4 px-4">Compiled prioritized issue-tracking briefs with decision options for Assistant Deputy and inter-ministerial harmonization meetings.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Confidentiality Disclaimer -->
+                    <div class="mt-4 flex items-start gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-500">
+                        <svg class="w-4 h-4 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p>
+                            <strong class="text-slate-700">Confidentiality Note:</strong> All ministry and government references presented in this portfolio are anonymized, high-level summaries of personal professional learning and methodology. They do not contain restricted internal drafts and do not represent official statements or positions of KemenPANRB or any public institution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. INTERACTIVE 6-STAGE POLICY ANALYSIS WORKFLOW -->
+    <section id="workflow" class="py-20 bg-white border-b border-slate-200/70 fade-in-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Methodology</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">6-Stage Policy Analysis Workflow</h2>
+                <p class="text-slate-600 mt-3 text-base">
+                    Click any stage below to inspect the analytical activities and concrete deliverables I apply from problem framing to post-implementation evaluation.
+                </p>
+            </div>
+
+            <!-- Horizontal Stepped Selector -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8" id="workflowSteps">
+                <!-- Buttons rendered by JS -->
+            </div>
+
+            <!-- Active Stage Detail Panel -->
+            <div id="workflowDetail" class="bg-navy-900 text-white rounded-2xl p-6 sm:p-8 shadow-lg transition-all">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EDUCATION, CERTIFICATIONS & SKILLS -->
+    <section id="credentials" class="py-20 bg-slate-50 border-b border-slate-200/70 fade-in-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Credentials &amp; Toolkit</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Education, Certifications &amp; Skills</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column: Education & Certifications -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Education Card -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm">
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 mb-3">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                            Education
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-navy-900">Universitas Sebelas Maret (UNS), Surakarta</h3>
+                                <p class="text-sm font-medium text-slate-700 mt-0.5">Applied Bachelor (D4) in Demography and Civil Registration</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-semibold shrink-0">
+                                Aug 2021 – Jul 2025
+                            </span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-4 text-sm">
+                            <span class="inline-flex items-center gap-1.5 font-semibold text-navy-900 bg-amber-50 border border-amber-200 px-3 py-1 rounded-lg">
+                                GPA: 3.76 / 4.00
+                            </span>
+                        </div>
+                        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                            <strong class="text-navy-900">Undergraduate Thesis:</strong> <em>Effectiveness of the Disdukcapil Smart Bantul Application as a Population Service Innovation</em>.
+                        </p>
+                    </div>
+
+                    <!-- Certifications Card -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm">
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 mb-4">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                            Licenses &amp; Certifications
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start justify-between gap-4 pb-4 border-b border-slate-100">
+                                <div>
+                                    <h4 class="text-sm font-bold text-navy-900">Competency Certificate: Public Policy Analyst (Analis Kebijakan Publik)</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">BNSP (Badan Nasional Sertifikasi Profesi) / LSP UNS</p>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 shrink-0">Aug 2025</span>
+                            </div>
+                            <div class="flex items-start justify-between gap-4 pb-4 border-b border-slate-100">
+                                <div>
+                                    <h4 class="text-sm font-bold text-navy-900">TOEIC Score 635 (Listening 350, Reading 285)</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Universitas Sebelas Maret (UNS)</p>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 shrink-0">Jul 2025</span>
+                            </div>
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="text-sm font-bold text-navy-900">Professional Human Resources Introduction</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Quantum HR Indonesia</p>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 shrink-0">Jun 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Skills Matrix -->
+                <div class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="text-xs font-bold uppercase tracking-wider text-amber-600">Skills &amp; Capabilities</div>
+
+                        <!-- Policy & Legal -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2.5">Policy &amp; Legal</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">Policy Brief Drafting</span>
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">Regulatory Harmonization</span>
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">Legislative Review (Raperda)</span>
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">Contract Review &amp; Drafting</span>
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">Government Relations</span>
+                                <span class="px-3 py-1.5 bg-navy-900/5 text-navy-900 text-xs font-medium rounded-lg">OSS &amp; Permit Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Research & Data -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2.5">Research &amp; Data</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Survey &amp; Questionnaire Design</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Qualitative Field Interviews</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Demographic &amp; Civil Data</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Statistical Analysis</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Program M&amp;E</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Tools -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2.5">Technical Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">MS Office Suite</span>
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">Google Workspace</span>
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">SPSS</span>
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">SIAK Database</span>
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">E-Procurement</span>
+                                <span class="px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-medium rounded-lg">Canva</span>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2.5">Languages</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                    <div class="text-xs font-bold text-navy-900">Indonesian</div>
+                                    <div class="text-xs text-slate-500">Native Proficiency</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                    <div class="text-xs font-bold text-navy-900">English</div>
+                                    <div class="text-xs text-slate-500">Professional Working (TOEIC 635)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER & CONTACT SECTION -->
+    <footer id="contact" class="bg-navy-950 text-slate-300 pt-16 pb-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                <div class="lg:col-span-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Get in Touch</span>
+                    <h2 class="font-serif text-3xl font-bold text-white mt-2">Open to Policy, Governance &amp; Legal Support Roles</h2>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed max-w-lg">
+                        Available for full-time opportunities in Public Policy Analysis, Government Relations, Regulatory Compliance, Policy Research, and Corporate Legal Support in Jakarta and beyond.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col justify-center space-y-3.5">
+                    <!-- Email Row with Copy Button -->
+                    <div class="flex items-center justify-between gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div class="truncate">
+                                <div class="text-[11px] uppercase tracking-wider text-slate-400">Email</div>
+                                <a href="mailto:billiacandrabintang@gmail.com" class="text-sm font-medium text-white hover:text-amber-400 transition-colors truncate block">
+                                    billiacandrabintang@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="copyEmail()" class="no-print shrink-0 px-3 py-1.5 bg-white/10 hover:bg-amber-600 text-white text-xs font-semibold rounded-lg transition-colors">
+                            Copy Email
+                        </button>
+                    </div>
+
+                    <!-- Phone & LinkedIn Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <a href="tel:+6289603303325" class="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-colors">
+                            <div class="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] uppercase tracking-wider text-slate-400">Phone / WhatsApp</div>
+                                <div class="text-sm font-medium text-white">+62 896-0330-3325</div>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/bintangbillia" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-colors">
+                            <div class="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] uppercase tracking-wider text-slate-400">LinkedIn</div>
+                                <div class="text-sm font-medium text-white">in/bintangbillia</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer & Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-500">
+                <p class="max-w-2xl leading-relaxed">
+                    <strong class="text-slate-400">Disclaimer:</strong> All descriptions of government, ministry, and legislative engagements are strictly non-confidential summaries of personal duties and professional learning. No restricted documents or official institutional positions are disclosed.
+                </p>
+                <div class="shrink-0">&copy; 2026 Bintang Billia Candra. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Case Study Detail Modal -->
+    <div id="caseModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden animate-fadeIn">
+            <div class="px-6 py-5 bg-navy-900 text-white flex items-start justify-between gap-4">
+                <div>
+                    <span id="modalCategory" class="text-[11px] font-bold uppercase tracking-wider text-amber-400"></span>
+                    <h3 id="modalTitle" class="font-serif text-xl sm:text-2xl font-bold mt-1"></h3>
+                    <p id="modalOrg" class="text-xs text-slate-300 mt-1"></p>
+                </div>
+                <button onclick="closeCaseModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Modal">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="modalBody" class="p-6 overflow-y-auto custom-scroll space-y-5 text-sm text-slate-700 leading-relaxed">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+                <button onclick="closeCaseModal()" class="px-5 py-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold rounded-lg transition-colors">
+                    Close Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-navy-900 text-white px-4 py-3 rounded-xl shadow-xl border border-white/10 flex items-center gap-2.5 text-sm font-medium">
+        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toastMsg">Email copied to clipboard</span>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. DATA: CASE STUDIES
+        // ==========================================
+        const caseStudies = [
+            {
+                id: 'case-1',
+                track: 'policy',
+                trackLabel: 'Policy & Governance',
+                org: 'KemenPANRB',
+                title: 'Regulatory Harmonization Matrix (RPerMen Inovasi Pelayanan Publik)',
+                summary: 'Structured regulatory review tracking terminology consistency, norm clarity, change traceability, and open issues across ministerial innovation policy drafts.',
+                metrics: '4-Dimension Review Framework',
+                context: 'Drafting and revising a Ministerial Regulation (RPerMen) on Public Service Innovation requires aligning legacy provisions, cross-unit feedback, and national legal drafting standards without introducing normative contradictions.',
+                actions: [
+                    'Constructed a structured comparison and change-tracking matrix covering Terminology Consistency, Norm Clarity, Change Traceability, and Open Issues.',
+                    'Cross-referenced definitions in General Provisions against operational articles to eliminate ambiguous mandates.',
+                    'Prepared concise issue-tracking briefs to support Assistant Deputy briefings and harmonization discussions.'
+                ],
+                outcome: 'Improved version auditability and accelerated internal review readiness during multi-stakeholder regulatory harmonization.',
+                note: 'Anonymized summary of personal learning; does not represent official KemenPANRB statements.'
+            },
+            {
+                id: 'case-2',
+                track: 'policy',
+                trackLabel: 'Policy & Governance',
+                org: 'KemenPANRB',
+                title: 'National Public Service Movement (GNPP) Action Plan & Policy Briefs',
+                summary: 'Developed structured action plan matrices, Gantt charts, and policy briefs to strengthen cross-ministerial public service innovation integration.',
+                metrics: 'Cross-Ministerial Alignment',
+                context: 'Scaling the Gerakan Nasional Pelayanan Publik (GNPP) and integrating innovation ecosystems (including KIPP PRO Tematik 2026 & JIPPNAS) demands clear milestone tracking and standardized reporting frameworks.',
+                actions: [
+                    'Drafted policy briefs synthesizing empirical observations on public service innovation integration.',
+                    'Built actionable GNPP implementation matrices and Gantt charts mapping deliverables, timelines, and responsible units.',
+                    'Supported socialization materials and reporting alignment for cross-ministerial and institutional (K/L) stakeholders.'
+                ],
+                outcome: 'Delivered clear operational roadmaps and executive-ready briefing materials supporting national public service governance.',
+                note: 'Anonymized summary of personal learning; does not represent official KemenPANRB statements.'
+            },
+            {
+                id: 'case-3',
+                track: 'legislative',
+                trackLabel: 'Legislative & Legal',
+                org: 'DPRD Kota Yogyakarta',
+                title: 'Regional Regulation (Raperda) & Academic Paper Support',
+                summary: 'Supported committee and plenary deliberations on municipal Raperda, regional budget amendments, institutional restructuring, and academic papers.',
+                metrics: 'Multiple Municipal Raperda',
+                context: 'Local legislative councils require thorough administrative and substantive tracking across budget amendments, regulatory repeals, and public-interest bylaws.',
+                actions: [
+                    'Supported committee and plenary sessions reviewing regional budget amendments, the repeal of Regional Regulation No. 4/2001 on SIUJK, and legal-entity restructuring of Perumda BPR Bank Jogja.',
+                    'Tracked academic papers (naskah akademik) on elderly welfare, wastewater management, and food safety/halal food.',
+                    'Assisted in public outreach initiatives covering OSS business licensing and anti-human trafficking legislation.'
+                ],
+                outcome: 'Gained end-to-end legislative fluency in municipal lawmaking, regulatory repeal mechanisms, and stakeholder public hearings.'
+            },
+            {
+                id: 'case-4',
+                track: 'research',
+                trackLabel: 'Research & Data',
+                org: 'Disdukcapil Semarang & Bantul',
+                title: 'Municipal Digital ID & KIA Rollout + SIAK Verification',
+                summary: 'Led community outreach for Digital ID (IKD) and Child Identity Cards (KIA), reaching 2,000+ citizens and delivering 2,033 KIA cards.',
+                metrics: '2,000+ Citizens | 2,033 KIA Cards',
+                context: 'Accelerating civil registration adoption requires combining accurate population database management with direct citizen education at the community level.',
+                actions: [
+                    'Led Digital ID (IKD) and KIA socialization campaigns across Semarang, directly reaching 2,000+ citizens and distributing 2,033 KIA cards.',
+                    'Verified civil-status documents (KTP, KK, KIA, Birth/Death/Marriage Certificates) and managed citizen records in the SIAK database at Disdukcapil Bantul.',
+                    'Evaluated digital public service adoption through undergraduate thesis research on the Disdukcapil Smart Bantul application.'
+                ],
+                outcome: 'Measurably expanded civil registration coverage while strengthening data accuracy and digital public service literacy.'
+            },
+            {
+                id: 'case-5',
+                track: 'corporate',
+                trackLabel: 'Corporate & Operations',
+                org: 'PT Jogja Ciamik Soro',
+                title: 'Corporate Event & B2B Sponsorship Contract Execution',
+                summary: 'Drafted and reviewed sponsorship/vendor agreements, pitched major beverage brands, and coordinated cross-functional teams for 4,000+ attendee events.',
+                metrics: '4,000+ Event Attendees',
+                context: 'Large-scale commercial activations require tight alignment between B2B sponsor commitments, vendor contract compliance, and on-site operational execution.',
+                actions: [
+                    'Drafted and reviewed sponsorship and vendor contracts to ensure clear deliverable clauses and commercial protection.',
+                    'Pitched B2B brand sponsorship and product activation proposals to major beverage brands.',
+                    'Coordinated cross-functional production, vendor, and activation teams to deliver seamless experiences for 4,000+ attendees.'
+                ],
+                outcome: 'Successfully delivered high-volume commercial events on schedule with full sponsor deliverable compliance.'
+            }
+        ];
+
+        // ==========================================
+        // 2. DATA: 6-STAGE POLICY WORKFLOW
+        // ==========================================
+        const workflowStages = [
+            {
+                num: '01',
+                title: 'Problem Definition',
+                subtitle: 'Framing the Regulatory or Service Gap',
+                activities: [
+                    'Identify root causes of public service bottlenecks, regulatory overlaps, or demographic disparities.',
+                    'Map affected stakeholders (ministries, local governments, businesses, and citizens) and institutional mandates.',
+                    'Define clear scope boundaries and measurable policy objectives.'
+                ],
+                outputs: ['Problem Tree & Root-Cause Matrix', 'Stakeholder Mapping Brief', 'Policy Scope Statement']
+            },
+            {
+                num: '02',
+                title: 'Evidence Gathering',
+                subtitle: 'Empirical Research & Legal Benchmarking',
+                activities: [
+                    'Conduct quantitative surveys, SPSS statistical analysis, and SIAK/administrative data verification.',
+                    'Execute qualitative field interviews with affected communities and front-line implementers.',
+                    'Audit existing laws, ministerial regulations, and academic papers (naskah akademik) for normative gaps.'
+                ],
+                outputs: ['Field Research & SPSS Summary', 'Regulatory Audit / Legal Baseline', 'Benchmarking Synthesis']
+            },
+            {
+                num: '03',
+                title: 'Options Analysis',
+                subtitle: 'Evaluating Regulatory & Operational Alternatives',
+                activities: [
+                    'Formulate feasible policy alternatives ranging from regulatory revision to administrative reform.',
+                    'Assess trade-offs across legal feasibility, fiscal/operational capacity, and stakeholder acceptance.',
+                    'Stress-test draft norms for terminology consistency and unintended compliance burdens.'
+                ],
+                outputs: ['Policy Options Comparison Matrix', 'Risk & Feasibility Assessment', 'Regulatory Impact Notes']
+            },
+            {
+                num: '04',
+                title: 'Recommendations',
+                subtitle: 'Executive Decision Support',
+                activities: [
+                    'Synthesize complex legal and empirical findings into concise, decision-ready policy briefs.',
+                    'Prepare side-by-side regulatory change matrices (Matriks Sandingan) with clear legal rationales.',
+                    'Equip leadership with speaker cheat sheets and anticipated Q&A for cross-agency briefings.'
+                ],
+                outputs: ['Executive Policy Brief', 'Harmonization & Change Matrix', 'Leadership Briefing Deck']
+            },
+            {
+                num: '05',
+                title: 'Implementation',
+                subtitle: 'Action Planning & Multi-Stakeholder Coordination',
+                activities: [
+                    'Translate approved policies into operational action plans, Gantt charts, and unit-level SOPs.',
+                    'Coordinate inter-ministerial, legislative, or B2B vendor alignment and contract deliverables.',
+                    'Support public socialization and capacity-building outreach to drive adoption.'
+                ],
+                outputs: ['Action Plan Matrix & Gantt Chart', 'Socialization & Outreach Toolkit', 'Stakeholder Coordination Log']
+            },
+            {
+                num: '06',
+                title: 'Monitoring & Evaluation',
+                subtitle: 'Tracking Outcomes & Continuous Iteration',
+                activities: [
+                    'Establish standardized reporting indicators and KPI dashboards to track program uptake.',
+                    'Collect post-implementation feedback from users and regional implementers.',
+                    'Document open issues and empirical lessons learned to inform the next regulatory cycle.'
+                ],
+                outputs: ['Standardized M&E Reporting Framework', 'Open-Issues Tracker', 'Post-Implementation Evaluation Report']
+            }
+        ];
+
+        // ==========================================
+        // 3. RENDER CASE STUDIES & FILTERING
+        // ==========================================
+        const caseGrid = document.getElementById('caseGrid');
+
+        function renderCases(filter = 'all') {
+            caseGrid.innerHTML = '';
+            const filtered = filter === 'all' ? caseStudies : caseStudies.filter(c => c.track === filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-slate-200 hover:border-amber-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/70 cursor-pointer group';
+                card.onclick = () => openCaseModal(item.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200/60 rounded-md">${item.trackLabel}</span>
+                            <span class="text-xs font-medium text-slate-400">${item.org}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-700 transition-colors leading-snug mb-2.5">${item.title}</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">${item.summary}</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-navy-800">${item.metrics}</span>
+                        <span class="text-xs font-semibold text-amber-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                            Inspect &rarr;
+                        </span>
+                    </div>
+                `;
+                caseGrid.appendChild(card);
+            });
+        }
+
+        // Filter button click handlers
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-navy-900', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                });
+                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                btn.classList.add('bg-navy-900', 'text-white', 'shadow-sm');
+                renderCases(btn.getAttribute('data-filter'));
+            });
+        });
+
+        // ==========================================
+        // 4. MODAL LOGIC
+        // ==========================================
+        const modal = document.getElementById('caseModal');
+
+        function openCaseModal(id) {
+            const item = caseStudies.find(c => c.id === id);
+            if (!item) return;
+
+            document.getElementById('modalCategory').textContent = item.trackLabel;
+            document.getElementById('modalTitle').textContent = item.title;
+            document.getElementById('modalOrg').textContent = `${item.org} • Key Highlight: ${item.metrics}`;
+
+            const actionsHtml = item.actions.map(a => `<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span><span>${a}</span></li>`).join('');
+            const noteHtml = item.note ? `<div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-500 italic">${item.note}</div>` : '';
+
+            document.getElementById('modalBody').innerHTML = `
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-1.5">Context &amp; Objective</h4>
+                    <p class="text-slate-600">${item.context}</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2">Key Actions &amp; Contributions</h4>
+                    <ul class="space-y-2 text-slate-600">${actionsHtml}</ul>
+                </div>
+                <div class="p-4 bg-amber-50/70 border border-amber-200/80 rounded-xl">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">Outcome &amp; Value</h4>
+                    <p class="text-navy-900 font-medium">${item.outcome}</p>
+                </div>
+                ${noteHtml}
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCaseModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on backdrop click or Escape key
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeCaseModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeCaseModal();
+        });
+
+        // ==========================================
+        // 5. INTERACTIVE 6-STAGE WORKFLOW
+        // ==========================================
+        const workflowStepsEl = document.getElementById('workflowSteps');
+        const workflowDetailEl = document.getElementById('workflowDetail');
+        let activeStageIndex = 0;
+
+        function renderWorkflow() {
+            workflowStepsEl.innerHTML = '';
+            workflowStages.forEach((stage, idx) => {
+                const isActive = idx === activeStageIndex;
+                const btn = document.createElement('button');
+                btn.className = `text-left p-4 rounded-xl border transition-all duration-200 ${
+                    isActive
+                        ? 'bg-navy-900 text-white border-navy-900 shadow-md ring-2 ring-amber-500/40'
+                        : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-white hover:border-amber-500/50'
+                }`;
+                btn.onclick = () => {
+                    activeStageIndex = idx;
+                    renderWorkflow();
+                };
+                btn.innerHTML = `
+                    <div class="text-xs font-bold ${isActive ? 'text-amber-400' : 'text-amber-600'} mb-1">STAGE ${stage.num}</div>
+                    <div class="text-sm font-bold leading-snug">${stage.title}</div>
+                `;
+                workflowStepsEl.appendChild(btn);
+            });
+
+            const current = workflowStages[activeStageIndex];
+            const activitiesHtml = current.activities.map(a => `
+                <li class="flex items-start gap-2.5 text-sm text-slate-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                    <span>${a}</span>
+                </li>
+            `).join('');
+
+            const outputsHtml = current.outputs.map(o => `
+                <span class="px-3 py-1.5 bg-white/10 border border-white/15 rounded-lg text-xs font-medium text-amber-300">${o}</span>
+            `).join('');
+
+            workflowDetailEl.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-5 mb-5 border-b border-white/10">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Stage ${current.num} of 06</span>
+                        <h3 class="font-serif text-2xl font-bold text-white mt-1">${current.title}</h3>
+                    </div>
+                    <span class="text-sm text-slate-400 font-medium">${current.subtitle}</span>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-7">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Key Analytical Activities</h4>
+                        <ul class="space-y-2.5">${activitiesHtml}</ul>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Tangible Outputs</h4>
+                        <div class="flex flex-wrap gap-2">${outputsHtml}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // 6. COPY EMAIL WITH TOAST (iframe-safe)
+        // ==========================================
+        function copyEmail() {
+            const email = 'billiacandrabintang@gmail.com';
+            const tempInput = document.createElement('textarea');
+            tempInput.value = email;
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('Email copied: ' + email);
+            } catch (err) {
+                showToast('Please copy manually: ' + email);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2800);
+        }
+
+        // ==========================================
+        // 7. MOBILE MENU & SCROLL ANIMATIONS
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Intersection Observer for subtle fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(sec => observer.observe(sec));
+
+        // Initialize components on load
+        renderCases('all');
+        renderWorkflow();
+    </script>
+</body>
+</html>
